@@ -7,7 +7,7 @@ A classe WebConfigurerAdapter foi removida no Spring Boot 3, conforme parte da e
 
 Implementando a configuração:
 
-```dtd
+```java
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -39,7 +39,7 @@ public class SecurityConfig {
 
 Testando a autorização: 
 
-```dtd
+```java
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -70,7 +70,7 @@ public class WelcomeController {
 
 ## Configure Adapter
 
-```dtd
+```java
 @Configuration
 @EnableMethodSecurity
 public class SecurityConfig {
@@ -120,7 +120,7 @@ No Spring Security 5.6, podemos habilitar a segurança baseada em anotações us
 ## Usuario no banco de dados
 Modelo de usuário:
 
-```dtd
+```java
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -152,7 +152,7 @@ public class User {
 
 Implementação do repositório:
 
-```dtd
+```java
 import me.dio.security.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -169,7 +169,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
 Implementação do SecurityDatabaseService:
 
-```dtd
+```java
 @Service
 public class SecurityDatabaseService  implements UserDetailsService {
     @Autowired
@@ -196,7 +196,7 @@ public class SecurityDatabaseService  implements UserDetailsService {
 
 É necessário injetar o SecurityDatabaseService na classe de configuração da autenticação
 
-```dtd
+```java
     @Autowired
         private SecurityDatabaseService securityDatabaseService;
     @Autowired
@@ -206,3 +206,4 @@ public class SecurityDatabaseService  implements UserDetailsService {
 ```
 
 *Para usar http basic subistitua o login form por httpBasic(withDefaults())
+
