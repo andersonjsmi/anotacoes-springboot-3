@@ -1,4 +1,4 @@
-#SpringBoot 3
+# SpringBoot 3
 
 
 ## Autenticação Simples
@@ -113,11 +113,11 @@ public class SecurityConfig {
 
 ```
 
-###@EnableWebSecurity
+### @EnableWebSecurity
 A anotação @EnableWebSecurity é usada para habilitar a configuração de segurança no Spring Boot.
 No Spring Security 5.6, podemos habilitar a segurança baseada em anotações usando a anotação @EnableMethodSecurity em qualquer instância @Configuration.
 
-##Usuario no banco de dados
+## Usuario no banco de dados
 Modelo de usuário:
 
 ```dtd
@@ -148,7 +148,7 @@ public class User {
 }
 ```
 
-##Repositorio:
+## Repositorio:
 
 Implementação do repositório:
 
@@ -165,7 +165,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
 ```
 
-##SecurityDatabaseService
+## SecurityDatabaseService
 
 Implementação do SecurityDatabaseService:
 
@@ -192,7 +192,7 @@ public class SecurityDatabaseService  implements UserDetailsService {
 }
 ```
 
-##Configurações
+## Configurações
 
 É necessário injetar o SecurityDatabaseService na classe de configuração da autenticação
 
